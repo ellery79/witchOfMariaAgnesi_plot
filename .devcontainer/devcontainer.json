@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "mcr.microsoft.com/devcontainers/python:2-3.14-trixie"
+	"build": {
+		// Path is relative to the devcontainer.json file.
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"EditorConfig.EditorConfig"
+			]
+		}
+	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		// This installs the latest Git automatically
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "false",        // You don't need Zsh
+            "username": "appuser",        // MUST match your Dockerfile user
+            "upgradePackages": "false"    // Keeps build faster
+            // We removed userUid/userGid because your Dockerfile handles them
+        }
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "appuser"
+}
