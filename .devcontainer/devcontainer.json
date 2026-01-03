@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
+	"name": "Python Hardened Container",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/python:2-3.14-trixie"
 	"build": {
@@ -20,13 +20,7 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		// This installs the latest Git automatically
-		"ghcr.io/devcontainers/features/git:1": {},
-		"ghcr.io/devcontainers/features/common-utils:2": {
-            "installZsh": "false",        // You don't need Zsh
-            "username": "appuser",        // MUST match your Dockerfile user
-            "upgradePackages": "false"    // Keeps build faster
-            // We removed userUid/userGid because your Dockerfile handles them
-        }
+		"ghcr.io/devcontainers/features/git:1": {}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
